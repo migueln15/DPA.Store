@@ -14,4 +14,8 @@
     <ProjectReference Include="..\DPA.Store.DOMAIN\DPA.Store.DOMAIN.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
 ﻿using DPA.Store.DOMAIN.Core.Entities;
+using DPA.Store.DOMAIN.Core.Interfaces;
 using DPA.Store.DOMAIN.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DPA.Store.DOMAIN.Infrastructure.Repositories
 {
-    public class CategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
 
         public readonly StoreDbContext _dbContext;
@@ -48,7 +49,7 @@ namespace DPA.Store.DOMAIN.Infrastructure.Repositories
             category.IsActive = true;
             await _dbContext.Category.AddAsync(category);
             int rows = await _dbContext.SaveChangesAsync();
-            return rows > 0? category.Id : -1;
+            return rows > 0 ? category.Id : -1;
         }
 
         public async Task<bool> UpdateCategory(Category category)
@@ -61,11 +62,11 @@ namespace DPA.Store.DOMAIN.Infrastructure.Repositories
         public async Task<bool> DeleteCategory(int id)
         {
             var category = await GetCategoryById(id);
-            if (category != null) return false;
-            
+            if (category == null) return false;
+
             //_dbContext.Category.Remove(category);
-            
-            category.IsActive = false;            
+
+            category.IsActive = false;
             int rows = await _dbContext.SaveChangesAsync();
 
             return rows > 0;
