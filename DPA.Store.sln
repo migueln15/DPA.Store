@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPA.Store.API", "DPA.Store.API\DPA.Store.API.csproj", "{989667F4-2E65-432E-B6B8-740DA39DAF2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPA.Store.DOMAIN", "DPA.Store.DOMAIN\DPA.Store.DOMAIN.csproj", "{685B8B0B-11EF-42A1-9168-4BAE1E97ABE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{989667F4-2E65-432E-B6B8-740DA39DAF2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989667F4-2E65-432E-B6B8-740DA39DAF2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989667F4-2E65-432E-B6B8-740DA39DAF2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989667F4-2E65-432E-B6B8-740DA39DAF2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685B8B0B-11EF-42A1-9168-4BAE1E97ABE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685B8B0B-11EF-42A1-9168-4BAE1E97ABE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685B8B0B-11EF-42A1-9168-4BAE1E97ABE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685B8B0B-11EF-42A1-9168-4BAE1E97ABE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A3087DC-49BB-48B4-BB12-8CD86B4B0FDF}
+	EndGlobalSection
+EndGlobal
