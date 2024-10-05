@@ -26,4 +26,12 @@ namespace DPA.Store.DOMAIN.Core.DTO
     {
         public string? Description { get; set; }
     }
+
+    public class CategoryProductsDTO
+    {
+        public int Id { get; set; }
+        public string? Description { get; set; }
+        public IEnumerable<ProductListDTO> Products { get; set; }
+
+    }
 }

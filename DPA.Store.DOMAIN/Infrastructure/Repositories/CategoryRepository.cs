@@ -44,6 +44,16 @@ namespace DPA.Store.DOMAIN.Infrastructure.Repositories
             return category;
         }
 
+        public async Task<Category> GetCategorProductById(int id)
+        {
+            var category = await _dbContext
+                            .Category
+                            .Where(x => x.Id == id)
+                            .Include(p=>p.Product)
+                            .FirstOrDefaultAsync();
+            return category;
+        }
+
         public async Task<int> CreateCategory(Category category)
         {
             category.IsActive = true;
@@ -71,5 +81,7 @@ namespace DPA.Store.DOMAIN.Infrastructure.Repositories
 
             return rows > 0;
         }
+
+
     }
 }

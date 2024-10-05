@@ -25,30 +25,32 @@ namespace DPA.Store.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetById(int id, [FromQuery] bool includeProducts)
         {
-            var category = await _categoryService.GetCategoryById(id);
-            return Ok(category);
+            if (includeProducts)
+                return Ok(await _categoryService.GetCategoryProductsById(id));
+
+            return Ok(await _categoryService.GetCategoryById(id));
         }
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CategoryDescriptioDTO categoryDTO)
         {
-            int id = await _categoryService.CreateCategory(categoryDTO);
+            int id = await _categoryService.Insert(categoryDTO);
             return Ok(id);
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] Category category)
+        public async Task<IActionResult> Update([FromBody] CategoryListDTO category)
         {
-            bool result = await _categoryService.UpdateCategory(category);
+            bool result = await _categoryService.Update(category);
             return result?Ok(result):BadRequest();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
-            var result = await _categoryService.DeleteCategory(id);
+            var result = await _categoryService.Delete(id);
             return result ? Ok(result) : BadRequest();
         }
 

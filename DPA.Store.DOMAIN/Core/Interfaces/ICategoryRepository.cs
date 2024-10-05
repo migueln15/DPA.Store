@@ -9,5 +9,6 @@ namespace DPA.Store.DOMAIN.Core.Interfaces
         Task<IEnumerable<Category>> GetCategories();
         Task<Category> GetCategoryById(int id);
         Task<bool> UpdateCategory(Category category);
+        Task<Category> GetCategorProductById(int id);
     }
 }
